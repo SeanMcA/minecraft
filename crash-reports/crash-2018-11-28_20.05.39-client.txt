@@ -1,0 +1,107 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  MicdoodlePlugin (MicdoodleCore-1.12.2-4.0.1.181.jar)
+Contact their authors BEFORE contacting forge
+
+// I just don't know what went wrong :(
+
+Time: 11/28/18 8:05 PM
+Description: Initializing game
+
+java.lang.VerifyError: Bad return type
+Exception Details:
+  Location:
+    Config.getDefiningResourcePack(Lnet/minecraft/server/network/NetHandlerLoginServer;)Lnet/minecraft/profiler/Snooper; @91: areturn
+  Reason:
+    Type 'net/minecraft/util/CombatEntry' (current frame, stack[0]) is not assignable to 'net/minecraft/profiler/Snooper' (from method signature)
+  Current Frame:
+    bci: @91
+    flags: { }
+    locals: { 'net/minecraft/server/network/NetHandlerLoginServer', 'net/minecraft/potion/PotionHealthBoost', 'java/util/Collection', 'java/util/List' }
+    stack: { 'net/minecraft/util/CombatEntry' }
+  Bytecode:
+    0x0000000: b202 cdb6 0388 4c2b b603 8e4d 2cc0 0335
+    0x0000010: 4e2d b903 3801 0004 6436 0415 049b 002e
+    0x0000020: 2d15 04b9 033c 0200 c003 a23a 0519 05b6
+    0x0000030: 03a5 3a06 1906 b203 7e2a b903 8103 0099
+    0x0000040: 0006 1906 b084 04ff a7ff d3b8 03a9 b203
+    0x0000050: 7e2a b603 d399 0007 b803 a9b0 01b0     
+  Stackmap Table:
+    full_frame(@27,{Object[#665],Object[#906],Object[#915],Object[#821],Integer},{})
+    same_frame(@69)
+    chop_frame(@75,1)
+    same_frame(@92)
+
+	at java.lang.Class.getDeclaredFields0(Native Method)
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583)
+	at java.lang.Class.getField0(Class.java:2975)
+	at java.lang.Class.getField(Class.java:1701)
+	at net.minecraftforge.fml.client.FMLClientHandler.detectOptifine(FMLClientHandler.java:293)
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:216)
+	at net.minecraft.client.Minecraft.func_71384_a(Minecraft.java:466)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:377)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at java.lang.Class.getDeclaredFields0(Native Method)
+	at java.lang.Class.privateGetDeclaredFields(Class.java:2583)
+	at java.lang.Class.getField0(Class.java:2975)
+	at java.lang.Class.getField(Class.java:1701)
+	at net.minecraftforge.fml.client.FMLClientHandler.detectOptifine(FMLClientHandler.java:293)
+	at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:216)
+	at net.minecraft.client.Minecraft.func_71384_a(Minecraft.java:466)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:377)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 513467176 bytes (489 MB) / 771751936 bytes (736 MB) up to 2147483648 bytes (2048 MB)
+	JVM Flags: 8 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx2G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: 
+	Loaded coremods (and transformers): 
+MicdoodlePlugin (MicdoodleCore-1.12.2-4.0.1.181.jar)
+  micdoodle8.mods.miccore.MicdoodleTransformer
+	Launched Version: 1.12.2-forge1.12.2-14.23.5.2768
+	LWJGL: 2.9.4
+	OpenGL: GeForce 210/PCIe/SSE2 GL version 3.3.0, NVIDIA Corporation
+	GL Caps: Using GL 1.3 multitexturing.
+Using GL 1.3 texture combiners.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Shaders are available because OpenGL 2.1 is supported.
+VBOs are available because OpenGL 1.5 is supported.
+
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: 4x Intel(R) Core(TM)2 Quad CPU Q9505 @ 2.83GHz

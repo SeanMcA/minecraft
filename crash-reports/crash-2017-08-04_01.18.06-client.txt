@@ -1,0 +1,62 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 8/4/17 1:18 AM
+Description: Initializing game
+
+org.lwjgl.LWJGLException: Pixel format not accelerated
+	at org.lwjgl.opengl.WindowsPeerInfo.nChoosePixelFormat(Native Method)
+	at org.lwjgl.opengl.WindowsPeerInfo.choosePixelFormat(WindowsPeerInfo.java:52)
+	at org.lwjgl.opengl.WindowsDisplay.createWindow(WindowsDisplay.java:247)
+	at org.lwjgl.opengl.Display.createWindow(Display.java:306)
+	at org.lwjgl.opengl.Display.create(Display.java:848)
+	at org.lwjgl.opengl.Display.create(Display.java:757)
+	at org.lwjgl.opengl.Display.create(Display.java:739)
+	at bib.at(SourceFile:635)
+	at bib.aq(SourceFile:458)
+	at bib.a(SourceFile:404)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Client thread
+Stacktrace:
+	at org.lwjgl.opengl.WindowsPeerInfo.nChoosePixelFormat(Native Method)
+	at org.lwjgl.opengl.WindowsPeerInfo.choosePixelFormat(WindowsPeerInfo.java:52)
+	at org.lwjgl.opengl.WindowsDisplay.createWindow(WindowsDisplay.java:247)
+	at org.lwjgl.opengl.Display.createWindow(Display.java:306)
+	at org.lwjgl.opengl.Display.create(Display.java:848)
+	at org.lwjgl.opengl.Display.create(Display.java:757)
+	at org.lwjgl.opengl.Display.create(Display.java:739)
+	at bib.at(SourceFile:635)
+	at bib.aq(SourceFile:458)
+
+-- Initialization --
+Details:
+Stacktrace:
+	at bib.a(SourceFile:404)
+	at net.minecraft.client.main.Main.main(SourceFile:123)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.1
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.8.0_25, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 19002104 bytes (18 MB) / 146743296 bytes (139 MB) up to 1060372480 bytes (1011 MB)
+	JVM Flags: 6 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx1G -XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:-UseAdaptiveSizePolicy -Xmn128M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: 1.12.1
+	LWJGL: 2.9.4
+	OpenGL: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	GL Caps: 
+	Using VBOs: Yes
+	Is Modded: Probably not. Jar signature remains and client brand is untouched.
+	Type: Client (map_client.txt)
+	Resource Packs: 
+	Current Language: ~~ERROR~~ NullPointerException: null
+	Profiler Position: N/A (disabled)
+	CPU: <unknown>

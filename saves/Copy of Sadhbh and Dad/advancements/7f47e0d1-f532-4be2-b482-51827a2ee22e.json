@@ -1,0 +1,29 @@
+{
+  "minecraft:adventure/sleep_in_bed": {
+    "criteria": {
+      "slept_in_bed": "2018-11-21 18:14:39 +0000"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2018-11-21 18:05:48 +0000"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "forest": "2018-11-21 18:11:43 +0000",
+      "extreme_hills_with_trees": "2018-11-21 18:13:17 +0000",
+      "forest_hills": "2018-11-21 18:11:32 +0000",
+      "plains": "2018-11-21 18:11:31 +0000",
+      "redwood_taiga": "2018-11-21 18:10:34 +0000",
+      "taiga": "2018-11-21 17:56:49 +0000",
+      "redwood_taiga_hills": "2018-11-21 18:10:45 +0000",
+      "taiga_hills": "2018-11-21 18:12:58 +0000",
+      "extreme_hills": "2018-11-21 18:13:04 +0000",
+      "river": "2018-11-21 18:10:22 +0000"
+    },
+    "done": false
+  }
+}

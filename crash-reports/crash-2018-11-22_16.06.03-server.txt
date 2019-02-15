@@ -1,0 +1,60 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  MicdoodlePlugin (MicdoodleCore-1.12.2.jar)
+Contact their authors BEFORE contacting forge
+
+// Oh - I know what I did wrong!
+
+Time: 11/22/18 4:06 PM
+Description: Exception in server tick loop
+
+java.lang.IllegalArgumentException: ChunkNibbleArrays should be 2048 bytes not: 0
+	at net.minecraft.world.chunk.NibbleArray.<init>(SourceFile:16)
+	at net.minecraft.world.chunk.storage.AnvilChunkLoader.func_75823_a(AnvilChunkLoader.java:449)
+	at net.minecraft.world.chunk.storage.AnvilChunkLoader.checkedReadChunkFromNBT__Async(AnvilChunkLoader.java:128)
+	at net.minecraft.world.chunk.storage.AnvilChunkLoader.loadChunk__Async(AnvilChunkLoader.java:92)
+	at net.minecraftforge.common.chunkio.ChunkIOProvider.run(ChunkIOProvider.java:70)
+	at net.minecraftforge.common.chunkio.ChunkIOExecutor.syncChunkLoad(ChunkIOExecutor.java:92)
+	at net.minecraft.world.gen.ChunkProviderServer.loadChunk(ChunkProviderServer.java:118)
+	at net.minecraft.world.gen.ChunkProviderServer.func_186028_c(ChunkProviderServer.java:89)
+	at net.minecraft.world.gen.ChunkProviderServer.func_186025_d(ChunkProviderServer.java:135)
+	at net.minecraft.server.MinecraftServer.func_71222_d(MinecraftServer.java:344)
+	at net.minecraft.server.integrated.IntegratedServer.func_71247_a(IntegratedServer.java:142)
+	at net.minecraft.server.integrated.IntegratedServer.func_71197_b(IntegratedServer.java:156)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:486)
+	at java.lang.Thread.run(Thread.java:745)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.8.0_51, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 889827320 bytes (848 MB) / 1342177280 bytes (1280 MB) up to 2147483648 bytes (2048 MB)
+	JVM Flags: 8 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx2G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2768 6 mods loaded, 6 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State        | ID               | Version      | Source                        | Signature                                |
+	|:------------ |:---------------- |:------------ |:----------------------------- |:---------------------------------------- |
+	| UCHIJAAAAAAA | minecraft        | 1.12.2       | minecraft.jar                 | None                                     |
+	| UCHIJAAAAAAA | mcp              | 9.42         | minecraft.jar                 | None                                     |
+	| UCHIJAAAAAAA | FML              | 8.0.99.99    | forge-1.12.2-14.23.5.2768.jar | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCHIJAAAAAAA | forge            | 14.23.5.2768 | forge-1.12.2-14.23.5.2768.jar | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| UCHIJAAAAAAA | micdoodlecore    |              | minecraft.jar                 | None                                     |
+	| UCHIJAAAAAAA | galacticraftcore | 4.0.1.181    | Galacticraft-Mod-1.12.2.jar   | None                                     |
+
+	Loaded coremods (and transformers): 
+MicdoodlePlugin (MicdoodleCore-1.12.2.jar)
+  micdoodle8.mods.miccore.MicdoodleTransformer
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 8; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
